@@ -270,9 +270,6 @@ class ConvRNN2D(RNN):
             return [initial_state]
 
     def __call__(self, inputs, initial_state=None, constants=None, **kwargs):
-        inputs, initial_state, constants = self._standardize_args(
-            inputs, initial_state, constants)
-
         if initial_state is None and constants is None:
             return super(ConvRNN2D, self).__call__(inputs, **kwargs)
 
